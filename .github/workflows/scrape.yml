@@ -1,6 +1,7 @@
 name: Scrape Twitter
 
 on:
+  workflow_dispatch:
   schedule:
     # Runs "at minute 15th minute" (see https://crontab.guru/every-15-minutes)
     - cron: '*/15 * * * *'
