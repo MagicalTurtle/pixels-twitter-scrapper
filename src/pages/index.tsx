@@ -11,7 +11,7 @@ export default function HomePage() {
     <Layout>
       <Seo />
 
-      <main>
+      <main className='grid h-screen content-center items-center bg-slate-900 text-center text-white'>
         <Twitter />
       </main>
     </Layout>

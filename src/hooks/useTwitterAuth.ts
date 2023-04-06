@@ -14,12 +14,14 @@ export default function useTwitterAuth() {
         try {
           setLoading(true);
 
-          const res = await fetch(
-            `https://pixels-data.xyz/twitter?id=${session?.twitter?.profile.data.id}`
-          );
-          if (!res.ok) throw new Error(res.statusText);
+          // TODO: enable this
+          // const res = await fetch(
+          //   `https://pixels-data.xyz/twitter?id=${session?.twitter?.profile.data.id}`
+          // );
 
+          // setCompleted(res.ok);
           setCompleted(true);
+          setError('');
         } catch (e: any) {
           setError(e?.message ?? e);
         } finally {

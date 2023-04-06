@@ -1,0 +1,14 @@
+name: Scrape Twitter
+
+on:
+  schedule:
+    # Runs "at minute 15th minute" (see https://crontab.guru/every-15-minutes)
+    - cron: '*/15 * * * *'
+jobs:
+  build:
+    name: Scrape
+    runs-on: ubuntu-latest
+    steps:
+      - name: cURL request
+        # Hit the webhook endpoint to rebuild  from the "main" branch
+        run: curl -X POST -d {} https://pixels-twitter.vercel.app/api/scrapper
