@@ -1,16 +1,16 @@
-import { AppProps } from 'next/app';
+import type { AppProps } from 'next/app';
+import { SessionProvider } from 'next-auth/react';
 
 import '@/styles/globals.css';
-// !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
-import '@/styles/colors.css';
 
-/**
- * !STARTERCONF info
- * ? `Layout` component is called in every page using `np` snippets. If you have consistent layout across all page, you can add it here too
- */
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <SessionProvider
+      // Provider options are not required but can be useful in situations where
+      // you have a short session maxAge time. Shown here with default values.
+      session={pageProps.session}
+    >
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
 }
-
-export default MyApp;
