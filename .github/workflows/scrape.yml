@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: cURL request
         # Hit the webhook endpoint to rebuild  from the "main" branch
-        run: curl -X POST -d {} https://pixels-twitter.vercel.app/api/scrapper
+        run: curl -X POST -d {} https://pixels-twitter-scrapper.vercel.app/api/scrapper
