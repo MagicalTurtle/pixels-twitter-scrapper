@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import TwitterProvider from 'next-auth/providers/twitter';
 
 export default NextAuth({
+  secret: process.env.AUTH_SECRET,
   // Configure one or more authentication providers
   providers: [
     TwitterProvider({
